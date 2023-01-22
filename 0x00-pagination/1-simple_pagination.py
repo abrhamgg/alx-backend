@@ -36,6 +36,6 @@ class Server:
         dataset = self.dataset()
         try:
             if dataset[indexes[1]]:
-                return dataset[indexes[0]:indexes[1]+1]
+                return dataset[indexes[0]:indexes[1]]
         except IndexError:
             return []
