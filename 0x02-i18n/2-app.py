@@ -17,11 +17,12 @@ babel = Babel(app)
 app.config.from_object(Config)
 app.url_map.strict_slashes = False
 
+
 @babel.localeselector
-def get_locale():
-    """function which is invoked for each
-    request to select a language"""
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+def get_locale() -> str:
+    """Retrieves the locale for a web page.
+    """
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route('/')
